@@ -68,3 +68,20 @@ set vb
 
 " Change comment highlighting - i like them extra visible
 highlight Comment ctermfg=cyan guifg=cyan ctermbg=blue guibg=blue
+
+" Incremental search
+set incsearch
+
+" Highlight the current line the cursor is on
+set cursorline
+
+" Flashes matching brackets and parenthesis
+set showmatch
+
+" Make shift + y act like shift + C
+nnoremap Y y$
+
+" Buf explorer
+let g:bufExplorerDefaultHelp=0       " Do not show default help.
+let g:bufExplorerShowRelativePath=1  " Show relative paths.
+
