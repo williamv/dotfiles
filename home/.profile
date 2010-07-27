@@ -58,12 +58,12 @@ function set_prompt {
     SYMBOL="\$"
   fi
 
-  PS1="$LBRACE$LIGHT_RED\$(date +%H:%M)$RBRACE$LBRACE$GREEN\u$RBRACE$LBRACE$YELLOW\W$RBRACE$LBRACE$LIGHT_CYAN\$(parse_git_branch)$RBRACE$LBRACE$WHITE\$(rails_env)$RBRACE$LIGHT_PURPLE$SYMBOL$NONE "
+  PS1="$LBRACE$LIGHT_RED\$(date +%H:%M)$RBRACE$LBRACE$GREEN\u$RBRACE$LBRACE$YELLOW\W$RBRACE$LBRACE$LIGHT_CYAN\$(parse_git_branch)$RBRACE$SYMBOL$NONE "
 }
 set_prompt
 
 # Needed for RVM
-if [[ -s /Users/ernie/.rvm/scripts/rvm ]] ; then source /Users/ernie/.rvm/scripts/rvm ; fi
+if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 # Completion files
-source .bash_completion.d/*
+source ~/.bash_completion.d/*
