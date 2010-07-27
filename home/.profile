@@ -64,3 +64,6 @@ set_prompt
 
 # Needed for RVM
 if [[ -s /Users/ernie/.rvm/scripts/rvm ]] ; then source /Users/ernie/.rvm/scripts/rvm ; fi
+
+# Completion files
+source .bash_completion.d/*
