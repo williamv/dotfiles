@@ -1,3 +1,15 @@
+# runs source over an entire dir looking for .bash files and sources them
+function massource() {
+  if [ ! -d $1 ]; then
+    echo "no dir - $1"
+    exit 0
+  fi
+  for bashscript in `ls -1Ap $1|grep .bash`
+  do
+    source $1$bashscript
+  done
+}
+
 # Build ruby tags for a rails project ready for vim
 alias gtags='rtags --vi -R .'
 
@@ -7,22 +19,15 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 
 alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
+alias finder='open -R'
 
 # Needed for RVM
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Completion files
-source ~/.bash_completion.d/*
+massource $HOME/.bash_completion.d/
 
 # Make the prompt nice and pretty 
 # XXX: needs .git completion loaded first as done in above line
-red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) magenta=$(tput setaf 5) reset=$(tput sgr0)
-export PS1="\[$yellow\]\t\[$reset\] \[$green\]\u@\h\[$reset\] \[$blue\]\w\[$reset\]\$(__git_ps1 ' \[$magenta\](%s)\[$reset\]')\$ "
-
-##
-# Your previous /Users/ernie/.profile file was backed up as /Users/ernie/.profile.macports-saved_2010-08-07_at_17:54:05
-##
-
-# MacPorts Installer addition on 2010-08-07_at_17:54:05: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
+red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) magenta=$(tput setaf 5) reset=$(tput sgr0) cyan=$(tput setaf 6)
+export PS1="[\[$red\]\t\[$reset\] \[$green\]\u@\h\[$reset\] \[$yellow\]\w\[$reset\]\$(__git_ps1 ' \[$cyan\](%s)\[$reset\]')]\$ "
