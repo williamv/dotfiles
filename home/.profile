@@ -1,3 +1,6 @@
+# Put brew local path before others
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 # runs source over an entire dir looking for .bash files and sources them
 function massource() {
   if [ ! -d $1 ]; then
@@ -9,6 +12,9 @@ function massource() {
     source $1$bashscript
   done
 }
+
+# Command to move files to trash
+trash() { mv "$@" ~/.Trash; }
 
 # Build ruby tags for a rails project ready for vim
 alias gtags='rtags --vi -R .'

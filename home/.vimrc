@@ -85,3 +85,11 @@ nnoremap Y y$
 let g:bufExplorerDefaultHelp=0       " Do not show default help.
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
+" Function to add GEM_HOME to tags path
+function! SetTags()
+  set tags='./tags'
+  if !empty($GEM_HOME)
+    let tag_path = ',' . substitute($GEM_HOME, '\(:\|$\)', '/tags,', 'g')
+    set tags += tag_path
+  endif
+endfunction
