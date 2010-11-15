@@ -1,3 +1,6 @@
+" Enable plugin bundles with pathogen
+call pathogen#runtime_append_all_bundles()
+
 filetype plugin on
 set nocompatible
 
@@ -13,7 +16,6 @@ filetype indent on
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
-
 
 syntax enable
 set ruler
@@ -92,4 +94,4 @@ function! SetTags()
     let tag_path = ',' . substitute($GEM_HOME, '\(:\|$\)', '/tags,', 'g')
     set tags += tag_path
   endif
-endfunction
+endfunction 
