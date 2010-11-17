@@ -1,7 +1,14 @@
+" Necessary on some Linux distros for pathogen to properly load bundles, does
+" on before off to fix exit code issue
+" http://tooky.github.com/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
+filetype on
+filetype off
+
 " Enable plugin bundles with pathogen
+call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
-filetype plugin on
+" Don't maintain compatibility
 set nocompatible
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
@@ -9,7 +16,10 @@ set nocompatible
 " program to always generate a file-name.
 set grepprg=grep\ -nH\ $*
 
-" OPTIONAL: This enables automatic indentation as you type.
+" Enable filetype plugins
+filetype plugin on
+
+" Enable filetype indenting plugins
 filetype indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
@@ -28,17 +38,39 @@ set ts=2 sw=2 " Insert two spaces
 set smarttab
 set expandtab " Don't use tab characters
 set showmatch
+set showcmd
+set showmode
+set showbreak=...
 set mat=5
 set list
+set wrap linebreak
+
 " Save info in history
 set viminfo=%,'1000,f1,<500,n~/.viminfo
 
+" Add extra highlighting to comments to make them stand out
 highlight comment ctermfg=cyan ctermbg=blue
 
-" Git branch info plugin
-set laststatus=2 " Enables the status line at the bottom of Vim
-"set statusline=%{GitBranchInfoString()}
-set statusline=%<%F%=\ [%M%R%H%Y]\ (%(%l,%c%))
+" Status line
+set statusline=%f
+
+" Git
+set statusline+=%{fugitive#statusline()}
+
+" RVM
+set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
+
+set statusline+=%=      "left/right separator
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+
+"turn off needless toolbar on gvim/mvim
+set guioptions-=T
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
 
 " Taglist for f3 button
 let Tlist_Sort_Type = 'name'
@@ -94,4 +126,7 @@ function! SetTags()
     let tag_path = ',' . substitute($GEM_HOME, '\(:\|$\)', '/tags,', 'g')
     set tags += tag_path
   endif
-endfunction 
+endfunction
+
+" Command-t fuzzy finder plugin options in bundle/command-t
+set wildignore+="public/javascripts/dojo/**"
