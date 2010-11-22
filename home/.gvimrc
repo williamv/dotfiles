@@ -38,6 +38,9 @@ map <silent> <D-7> :tabn 7<CR>
 map <silent> <D-8> :tabn 8<CR>
 map <silent> <D-9> :tabn 9<CR>
 
+"turn off needless toolbar on gvim/mvim
+set guioptions-=T
+
 source ~/.vimrc
 
 " Use window transparency, must be done after loading .vimrc

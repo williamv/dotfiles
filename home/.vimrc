@@ -36,6 +36,8 @@ set hls
 set formatoptions=tcqr
 set ts=2 sw=2 " Insert two spaces
 set smarttab
+set shiftround
+set autoindent
 set expandtab " Don't use tab characters
 set showmatch
 set showcmd
@@ -65,12 +67,10 @@ set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 
-"turn off needless toolbar on gvim/mvim
-set guioptions-=T
-
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
+set foldlevel=5
 
 " Taglist for f3 button
 let Tlist_Sort_Type = 'name'
