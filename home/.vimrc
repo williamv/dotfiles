@@ -17,10 +17,7 @@ set nocompatible
 set grepprg=grep\ -nH\ $*
 
 " Enable filetype plugins
-filetype plugin on
-
-" Enable filetype indenting plugins
-filetype indent on
+filetype plugin indent on
 
 " OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
@@ -129,4 +126,4 @@ function! SetTags()
 endfunction
 
 " Command-t fuzzy finder plugin options in bundle/command-t
-set wildignore+="public/javascripts/dojo/**"
+set wildignore+=public/javascripts/dojo/**
