@@ -8,7 +8,6 @@ Pathogen and plugins:
 
 * command-t
 * nerdcommenter
-* nerdtree
 * supertab
 * vim-endwise
 * vim-fugitive
