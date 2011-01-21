@@ -44,6 +44,9 @@ set mat=5
 set list
 set wrap linebreak
 
+" Preserve buffers, i.e. don't 'close' files when the window is closed
+set hidden
+
 " Save info in history
 set viminfo=%,'1000,f1,<500,n~/.viminfo
 
@@ -51,7 +54,7 @@ set viminfo=%,'1000,f1,<500,n~/.viminfo
 highlight comment ctermfg=cyan ctermbg=blue
 
 " Status line
-set statusline=%f
+set statusline=[%n]\ %f\ %m\ %y
 
 " Git
 set statusline+=%{fugitive#statusline()}
@@ -63,6 +66,9 @@ set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
+
+" Always show the status line
+set laststatus=2
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -122,7 +128,6 @@ function! SetTags()
   if !empty($GEM_HOME)
     let tag_path = ',' . substitute($GEM_HOME, '\(:\|$\)', '/tags,', 'g')
     set tags += tag_path
-  endif
 endfunction
 
 " Command-t fuzzy finder plugin options in bundle/command-t
