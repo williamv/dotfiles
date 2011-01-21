@@ -13,6 +13,7 @@ Pathogen and plugins:
 * bufexplorer
 * vim-endwise
 * vim-fugitive
+* vim-git
 * vim-haml
 * vim-markdown
 * vim-matchit
@@ -21,6 +22,7 @@ Pathogen and plugins:
 * vim-ruby
 * vim-surround
 * vim-unimpaired
+* vim-latex
 
 ### Bash
 
