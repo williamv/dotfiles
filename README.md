@@ -10,6 +10,7 @@ Pathogen and plugins:
 * nerdcommenter
 * supertab
 * taglist
+* bufexplorer
 * vim-endwise
 * vim-fugitive
 * vim-haml
