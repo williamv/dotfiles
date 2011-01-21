@@ -9,6 +9,7 @@ Pathogen and plugins:
 * command-t
 * nerdcommenter
 * supertab
+* taglist
 * vim-endwise
 * vim-fugitive
 * vim-haml
