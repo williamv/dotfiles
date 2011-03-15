@@ -11,6 +11,7 @@ Pathogen and plugins:
 * supertab
 * taglist
 * bufexplorer
+* vim-clojure
 * vim-endwise
 * vim-fugitive
 * vim-git
@@ -23,10 +24,13 @@ Pathogen and plugins:
 * vim-surround
 * vim-unimpaired
 * vim-latex
+* vim-extradited
+* vim-flog
 
 ### Bash
 
 Prompt with [$time $user@$host $pwd $git_branch]
+Added some auto completion scripts for git and git-flow
 
 ### Git
 

@@ -43,9 +43,7 @@ set showbreak=...
 set mat=5
 set list
 set wrap linebreak
-
-" Preserve buffers, i.e. don't 'close' files when the window is closed
-set hidden
+set nohid
 
 " Save info in history
 set viminfo=%,'1000,f1,<500,n~/.viminfo
@@ -132,3 +130,9 @@ endfunction
 
 " Command-t fuzzy finder plugin options in bundle/command-t
 set wildignore+=public/javascripts/dojo/**
+
+" Flog
+:silent exe "g:flog_enable"
+
+" Clear highlighted search items by pressing space
+nmap <SPACE> <SPACE>:noh<CR>
