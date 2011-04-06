@@ -67,3 +67,6 @@
 [submodule "home/.vim/bundle/vim-extradite"]
 	path = home/.vim/bundle/vim-extradite
 	url = https://github.com/int3/vim-extradite.git
+[submodule "home/.vim/bundle/vim-colors-solarized"]
+	path = home/.vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
