@@ -31,6 +31,7 @@ alias finder='open -R'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Completion files
+massource `brew --prefix git`/etc/bash_completion.d/
 massource $HOME/.bash_completion.d/
 
 # Make the prompt nice and pretty 
