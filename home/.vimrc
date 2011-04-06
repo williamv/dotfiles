@@ -48,6 +48,10 @@ set nohid
 " Save info in history
 set viminfo=%,'1000,f1,<500,n~/.viminfo
 
+" Color scheme
+set background=dark
+colorscheme railscasts
+
 " Add extra highlighting to comments to make them stand out
 highlight comment ctermfg=cyan ctermbg=blue
 
@@ -91,6 +95,10 @@ highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 " Show leading whitespace that includes spaces, and trailing whitespace.
 autocmd BufWinEnter * match ExtraWhitespace /\(\S\+\)\@<=\s\+$\| \+\ze\t\|[^\t]\zs\t\+/
 
+" Remove trailing whitespace on save of these types of files
+" XXX: Too slow and risky
+" autocmd BufWritePre *.rb,*.haml,*.js,*.c,*.cpp,*.h,*.hpp :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\S\\@<=\\s\\+$","","")'))
+
 " Use matching above, don't use listchars
 set nolist
 
@@ -102,7 +110,8 @@ set noerrorbells
 set vb
 
 " Change comment highlighting - i like them extra visible
-highlight Comment ctermfg=cyan guifg=cyan ctermbg=blue guibg=blue
+highlight Comment ctermfg=cyan guifg=cyan ctermbg=darkblue guibg=#202060
+" highlight Comment guifg=#fdf6e3 guibg=#657b83 ctermfg=cyan ctermbg=blue
 
 " Incremental search
 set incsearch

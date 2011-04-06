@@ -1,6 +1,3 @@
-" Make gui look pretty
-colorscheme evening
-
 " Load window size out of saved sessions
 set sessionoptions+=resize
 
@@ -9,9 +6,9 @@ set fuoptions=maxvert,maxhorz
 
 " bind command-/ to toggle comment
 " requires NERD Commenter to be installed: http://www.vim.org/scripts/script.php?script_id=1218
-nmap <D-/> ,c<space>
-vmap <D-/> ,c<space>
-imap <D-/> <C-O>,c<space>
+nmap <D-/> <Leader>c<space>
+vmap <D-/> <Leader>c<space>
+imap <D-/> <C-O><Leader>c<space>
 let NERDShutUp = 1 " so it doesn't complain about types it doesn't know
 
 " bind command-] to shift right
@@ -44,4 +41,4 @@ set guioptions-=T
 source ~/.vimrc
 
 " Use window transparency, must be done after loading .vimrc
-set transparency=10
+set transparency=3
