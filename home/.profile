@@ -1,5 +1,5 @@
 # Put brew local path before others
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH
 
 # runs source over an entire dir looking for .bash files and sources them
 function massource() {
