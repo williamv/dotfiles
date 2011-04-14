@@ -32,6 +32,7 @@ alias finder='open -R'
 
 # Completion files
 massource `brew --prefix git`/etc/bash_completion.d/
+massource `brew --prefix git-flow`/etc/bash_completion.d/
 massource $HOME/.bash_completion.d/
 
 # Make the prompt nice and pretty 
