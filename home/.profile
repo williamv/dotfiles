@@ -37,5 +37,8 @@ massource $HOME/.bash_completion.d/
 
 # Make the prompt nice and pretty 
 # XXX: needs .git completion loaded first as done in above line
+export GIT_PS1_SHOWDIRTYSTATE=true # '*' for unstaged changes, '+' for staged
+export GIT_PS1_SHOWSTASHSTATE=true # '$' if smth is stashed
+export GIT_PS1_SHOWUNTRACKEDFILES=true # '%' if un-tracked files
 red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) magenta=$(tput setaf 5) reset=$(tput sgr0) cyan=$(tput setaf 6)
-export PS1="[\[$red\]\t\[$reset\] \[$green\]\u@\h\[$reset\] \[$yellow\]\w\[$reset\]\$(__git_ps1 ' \[$cyan\](%s)\[$reset\]')]\$ "
+export PS1="[\[$red\]\t\[$reset\] \[$green\]\u@\h\[$reset\] \[$yellow\]\W\[$reset\]]\$(__git_ps1 '\[$cyan\](%s)\[$reset\]')\$ "
