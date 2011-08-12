@@ -27,6 +27,8 @@ alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
 alias finder='open -R'
 
+alias fulltest='rake db:reset RAILS_ENV=test && rake spec'
+
 # Needed for RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
