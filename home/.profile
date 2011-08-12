@@ -37,6 +37,9 @@ massource `brew --prefix git`/etc/bash_completion.d/
 massource `brew --prefix git-flow`/etc/bash_completion.d/
 massource $HOME/.bash_completion.d/
 
+# Make postgres a little quieter
+export PGOPTIONS='-c client_min_messages=WARNING'
+
 # Make the prompt nice and pretty 
 # XXX: needs .git completion loaded first as done in above line
 export GIT_PS1_SHOWDIRTYSTATE=true # '*' for unstaged changes, '+' for staged
