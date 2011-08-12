@@ -76,3 +76,6 @@
 [submodule "home/.vim/bundle/vim-ragel"]
 	path = home/.vim/bundle/vim-ragel
 	url = https://github.com/jayferd/ragel.vim.git
+[submodule "home/.vim/bundle/vim-rake"]
+	path = home/.vim/bundle/vim-rake
+	url = git://github.com/tpope/vim-rake.git
