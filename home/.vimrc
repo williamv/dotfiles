@@ -52,9 +52,6 @@ set viminfo=%,'1000,f1,<500,n~/.viminfo
 set background=dark
 colorscheme railscasts
 
-" Add extra highlighting to comments to make them stand out
-highlight comment ctermfg=cyan ctermbg=blue
-
 " Status line
 set statusline=[%n]\ %f\ %m\ %y
 
@@ -110,8 +107,7 @@ set noerrorbells
 set vb
 
 " Change comment highlighting - i like them extra visible
-highlight Comment ctermfg=cyan guifg=cyan ctermbg=darkblue guibg=#202060
-" highlight Comment guifg=#fdf6e3 guibg=#657b83 ctermfg=cyan ctermbg=blue
+highlight Comment ctermfg=cyan ctermbg=darkblue guifg=cyan guibg=#202060
 
 " Incremental search
 set incsearch
@@ -129,19 +125,13 @@ nnoremap Y y$
 let g:bufExplorerDefaultHelp=0       " Do not show default help.
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
-" Function to add GEM_HOME to tags path
-function! SetTags()
-  set tags='./tags'
-  if !empty($GEM_HOME)
-    let tag_path = ',' . substitute($GEM_HOME, '\(:\|$\)', '/tags,', 'g')
-    set tags += tag_path
-endfunction
-
 " Command-t fuzzy finder plugin options in bundle/command-t
-set wildignore+=public/javascripts/dojo/**
-
-" Flog
-:silent exe "g:flog_enable"
+set wildignore+=.git,*.o,*.obj,*.pdf,tmp,log,private,public/javascripts/dojo
 
 " Clear highlighted search items by pressing space
 nmap <SPACE> <SPACE>:noh<CR>
+
+" Use tags in gems
+autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+      \ pathogen#split(&tags) +
+      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))

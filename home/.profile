@@ -16,18 +16,21 @@ function massource() {
 # Command to move files to trash
 trash() { mv "$@" ~/.Trash; }
 
-# Build ruby tags for a rails project ready for vim
-alias gtags='rtags --vi -R .'
 
 # Colors for ls output
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
+# Build ruby tags for a rails project ready for vim
+alias gtags='rtags --vi -R .'
+
 alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
 alias finder='open -R'
 
-alias fulltest='rake db:reset RAILS_ENV=test && rake spec'
+alias fulltest='bundle exec rake db:reset RAILS_ENV=test && bundle exec rake spec'
+
+alias seed='bundle exec rake db:seed'
 
 # Needed for RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
