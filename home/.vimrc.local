@@ -1,0 +1,22 @@
+" Spell checking
+set spell spelllang=en_au
+
+" Color scheme
+color railscasts
+
+" Change comment highlighting - i like them extra visible
+highlight Comment ctermfg=cyan ctermbg=darkblue guifg=cyan guibg=#202060
+
+" Make shift + y act like shift + C
+nnoremap Y y$
+
+" Use tags in gems
+autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+      \ pathogen#split(&tags) +
+      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
+
+" Command-t fuzzy finder plugin options in bundle/command-t
+set wildignore+=.git,*.o,*.obj,*.pdf,tmp,log,private,public/javascripts/dojo
+
+" Clear highlighted search items by pressing space
+nmap <SPACE> <SPACE>:noh<CR>

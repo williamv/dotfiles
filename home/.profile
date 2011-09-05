@@ -36,8 +36,9 @@ alias seed='bundle exec rake db:seed'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Completion files
-massource `brew --prefix git`/etc/bash_completion.d/
-massource `brew --prefix git-flow`/etc/bash_completion.d/
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
 massource $HOME/.bash_completion.d/
 
 # Make postgres a little quieter
