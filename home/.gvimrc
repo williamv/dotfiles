@@ -1,0 +1,44 @@
+" Load window size out of saved sessions
+set sessionoptions+=resize
+
+" fullscreen maximizes vertically AND horizontally
+set fuoptions=maxvert,maxhorz
+
+" bind command-/ to toggle comment
+" requires NERD Commenter to be installed: http://www.vim.org/scripts/script.php?script_id=1218
+nmap <D-/> <Leader>c<space>
+vmap <D-/> <Leader>c<space>
+imap <D-/> <C-O><Leader>c<space>
+let NERDShutUp = 1 " so it doesn't complain about types it doesn't know
+
+" bind command-] to shift right
+nmap <D-]> >>
+vmap <D-]> >>
+imap <D-]> <C-O>>>
+
+" bind command-[ to shift left
+nmap <D-[> <<
+vmap <D-[> <<
+imap <D-[> <C-O><<
+
+" bind command-option-l to toggle line numbers
+nmap <silent> <D-M-l> :set invnumber<CR>
+
+" open tabs with command-<tab number>
+map <silent> <D-1> :tabn 1<CR>
+map <silent> <D-2> :tabn 2<CR>
+map <silent> <D-3> :tabn 3<CR>
+map <silent> <D-4> :tabn 4<CR>
+map <silent> <D-5> :tabn 5<CR>
+map <silent> <D-6> :tabn 6<CR>
+map <silent> <D-7> :tabn 7<CR>
+map <silent> <D-8> :tabn 8<CR>
+map <silent> <D-9> :tabn 9<CR>
+
+"turn off needless toolbar on gvim/mvim
+set guioptions-=T
+
+source ~/.vimrc
+
+" Use window transparency, must be done after loading .vimrc
+set transparency=3

@@ -1,5 +1,0 @@
-" Use window transparency, must be done after loading .vimrc
-set transparency=3
-
-" Railscasts color scheme
-color railscasts+
