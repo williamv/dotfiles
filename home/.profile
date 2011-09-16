@@ -41,7 +41,7 @@ export PGOPTIONS='-c client_min_messages=WARNING'
 # Use macvim for editing
 export EDITOR='mvim -f'
 
-# Don't duplicate items in the history
+# Ignore duplicate commands when adding to the history and some repeatedly used short commands
 export HISTIGNORE="&:ls:ls *:[bf]g:exit"
 
 # Make the prompt nice and pretty
