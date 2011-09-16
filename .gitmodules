@@ -79,3 +79,15 @@
 [submodule "home/.vim/bundle/vim-rake"]
 	path = home/.vim/bundle/vim-rake
 	url = git://github.com/tpope/vim-rake.git
+[submodule "home/.vim/bundle/vim-jade"]
+	path = home/.vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git
+[submodule "home/.vim/bundle/vim-align"]
+	path = home/.vim/bundle/vim-align
+	url = https://github.com/tsaleh/vim-align.git
+[submodule "home/.vim/bundle/vim-hammer"]
+	path = home/.vim/bundle/vim-hammer
+	url = https://github.com/robgleeson/hammer.vim.git
+[submodule "home/.vim/bundle/vim-stylus"]
+	path = home/.vim/bundle/vim-stylus
+	url = https://github.com/wavded/vim-stylus.git
