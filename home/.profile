@@ -29,13 +29,22 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
+# Clobber the RVM changes when loading rvm so it uses the system ruby
+mvim()
+{
+    (unset GEM_PATH GEM_HOME; command mvim "$@")
+}
+
 # Make postgres a little quieter
 export PGOPTIONS='-c client_min_messages=WARNING'
 
 # Use macvim for editing
-export EDITOR=mvim
+export EDITOR='mvim -f'
 
-# Make the prompt nice and pretty 
+# Don't duplicate items in the history
+export HISTIGNORE="&:ls:ls *:[bf]g:exit"
+
+# Make the prompt nice and pretty
 # XXX: needs .git completion loaded first as done in above line
 export GIT_PS1_SHOWDIRTYSTATE=true # '*' for unstaged changes, '+' for staged
 export GIT_PS1_SHOWSTASHSTATE=true # '$' if smth is stashed

@@ -1,0 +1,12 @@
+# Show tab completions immediately
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# Treat special characters the same when tab completing
+set completion-map-case on
+
+# Show tab completion amount
+set completion-prefix-display-length 2
+
+# Ignore case when completing
+set completion-ignore-case on
