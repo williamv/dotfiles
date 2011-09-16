@@ -4,22 +4,14 @@ set sessionoptions+=resize
 " fullscreen maximizes vertically AND horizontally
 set fuoptions=maxvert,maxhorz
 
-" bind command-/ to toggle comment
-" requires NERD Commenter to be installed: http://www.vim.org/scripts/script.php?script_id=1218
-nmap <D-/> <Leader>c<space>
-vmap <D-/> <Leader>c<space>
-imap <D-/> <C-O><Leader>c<space>
+" Command-/ to toggle comments
+map <D-/> <plug>NERDCommenterToggle<CR>
+imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
 let NERDShutUp = 1 " so it doesn't complain about types it doesn't know
 
-" bind command-] to shift right
-nmap <D-]> >>
-vmap <D-]> >>
-imap <D-]> <C-O>>>
-
-" bind command-[ to shift left
-nmap <D-[> <<
-vmap <D-[> <<
-imap <D-[> <C-O><<
+" Command-][ to increase/decrease indentation
+vmap <D-]> >gv
+vmap <D-[> <gv
 
 " bind command-option-l to toggle line numbers
 nmap <silent> <D-M-l> :set invnumber<CR>
@@ -34,6 +26,9 @@ map <silent> <D-6> :tabn 6<CR>
 map <silent> <D-7> :tabn 7<CR>
 map <silent> <D-8> :tabn 8<CR>
 map <silent> <D-9> :tabn 9<CR>
+
+" Command-Return for fullscreen
+macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
