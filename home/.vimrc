@@ -131,6 +131,10 @@ set wildignore+=.git,*.o,*.obj,*.pdf,tmp,log,private,public/javascripts/dojo
 " Clear highlighted search items by pressing space
 nmap <SPACE> <SPACE>:noh<CR>
 
+" Turn off the ESC key, this is to train me to use CTRL-C or capslock, which
+" are more efficient
+imap <ESC> <Nop>
+
 " Use tags in gems
 autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
       \ pathogen#split(&tags) +
