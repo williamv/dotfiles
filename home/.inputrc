@@ -10,3 +10,7 @@ set completion-prefix-display-length 2
 
 # Ignore case when completing
 set completion-ignore-case on
+
+# Incremental search of history
+"\e[A": history-search-backward
+"\e[B": history-search-forward

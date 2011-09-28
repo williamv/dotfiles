@@ -51,3 +51,14 @@ export GIT_PS1_SHOWSTASHSTATE=true # '$' if smth is stashed
 export GIT_PS1_SHOWUNTRACKEDFILES=true # '%' if un-tracked files
 red=$(tput setaf 1) green=$(tput setaf 2) yellow=$(tput setaf 3) blue=$(tput setaf 4) magenta=$(tput setaf 5) reset=$(tput sgr0) cyan=$(tput setaf 6)
 export PS1="[\[$red\]\t\[$reset\] \[$green\]\u@\h\[$reset\] \[$yellow\]\W\[$reset\]]\$(__git_ps1 '\[$cyan\](%s)\[$reset\]')\$ "
+
+# Put host and path details into the prompt window
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}\007"'
+
+# Make sure history is appended after every command so multiple windows don't
+# stomp eachothers history
+export PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
+shopt -s histappend
+
+# Use my custom input rc
+export INPUTRC=~/.inputrc
