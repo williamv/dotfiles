@@ -57,8 +57,10 @@ export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}: ${PWD/#$HOME/~}
 
 # Make sure history is appended after every command so multiple windows don't
 # stomp eachothers history
-export PROMPT_COMMAND="$PROMPT_COMMAND; history -a"
-shopt -s histappend
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+export HISTSIZE=100000                   # big big history
+export HISTFILESIZE=100000               # big big history
+shopt -s histappend hist_ignore_dups share_history inc_append_history extended_history
 
 # Use my custom input rc
 export INPUTRC=~/.inputrc
