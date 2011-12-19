@@ -1,3 +1,42 @@
 [user]
 	name = John Barker
 	email = jebarker@gmail.com
+[core]
+	excludesfile = ~/.gitfiles/ignore
+  # Tabs appear as two spaces
+  pager = less -FXRS -x2
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  st = status
+  ds = diff --staged
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[format]
+  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+[color "branch"]
+  current = green bold
+  local = green
+  remote = red bold
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = green bold
+  changed = yellow bold
+  untracked = red
+[color "sh"]
+  branch = yellow
+[push]
+  # 'git push' should only do the current branch, not all
+  default = current
+[branch]
+  # always setup 'git pull' to rebase instead of merge
+  autosetuprebase = always
+[diff]
+  renames = copies
+  mnemonicprefix = true
