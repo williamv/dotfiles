@@ -24,19 +24,17 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-plugins=(brew)
-plugins=(rails)
-plugins=(rails3)
-plugins=(rvm)
-plugins=(history-substring-search)
+plugins=(git github git-flow brew rails rails3 rvm history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+# Turn off annoying autocorrect
+unsetopt CORRECT_ALL
+
+# Make history files large and shared over multiple sessions
+export HISTFILE=~/.history
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
@@ -44,7 +42,6 @@ setopt HISTAPPEND HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_VERIFY HIST_IGNORE_A
 
 # Colors for ls output
 export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
 
 # Colors for grep output
 alias grep='grep --color=auto'

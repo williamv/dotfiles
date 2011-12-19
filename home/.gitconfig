@@ -1,6 +1,9 @@
 [user]
 	name = John Barker
 	email = jebarker@gmail.com
+[github]
+  user = GITHUB_USER
+  token = GITHUB_TOKEN
 [core]
 	excludesfile = ~/.gitfiles/ignore
   # Tabs appear as two spaces
