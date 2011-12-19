@@ -18,3 +18,9 @@ tags
 !tags/
 TAGS
 !TAGS/
+
+# IntelliWHATEVER
+*.iml
+*.ipr
+*.iws
+.idea/
