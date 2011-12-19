@@ -40,7 +40,7 @@ HISTFILE=~/.histfile
 export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
 export HISTSIZE=100000                   # big big history
 export HISTFILESIZE=100000               # big big history
-setopt histappend hist_ignore_dups share_history inc_append_history extended_history
+setopt HISTAPPEND HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_VERIFY HIST_IGNORE_ALL_DUPS HIST_IGNORE_DUPS SHARE_HISTORY INC_APPEND_HISTORY EXTENDED_HISTORY
 
 # Colors for ls output
 export CLICOLOR=1
@@ -61,6 +61,7 @@ trash() { mv "$@" ~/.Trash; }
 alias gtags='rtags --vi -R .'
 alias fulltest='bundle exec rake db:reset RAILS_ENV=test && bundle exec rake spec'
 alias seed='bundle exec rake db:seed'
+alias git='hub'
 
 # Clobber the RVM changes when loading rvm so it uses the system ruby
 mvim()
@@ -82,3 +83,9 @@ export HISTIGNORE="&:ls:ls *:[bf]g:exit"
 
 # Use my custom input rc
 export INPUTRC=~/.inputrc
+
+# Load local customizations that don't get checked in to homesick
+if [[ -r $HOME/.zshrc.local ]]
+then
+  source $HOME/.zshrc.local
+fi
