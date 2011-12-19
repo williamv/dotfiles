@@ -31,3 +31,4 @@
 --ignore-dir=log
 --ignore-dir=public/javascripts/dojo
 --ignore-dir=tmp
+--ignore-dir=node_modules
