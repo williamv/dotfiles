@@ -43,6 +43,9 @@ setopt HISTAPPEND HIST_IGNORE_SPACE HIST_REDUCE_BLANKS HIST_VERIFY HIST_IGNORE_A
 # Colors for ls output
 export CLICOLOR=1
 
+# Say how long a command took, if it took more than 30 seconds
+export REPORTTIME=30
+
 # Colors for grep output
 alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
