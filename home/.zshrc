@@ -30,6 +30,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+# Ensure 'escape dot' sequence works like default bash/zsh.
+bindkey '\e.' insert-last-word
+
 # Turn off annoying autocorrect
 unsetopt CORRECT_ALL
 
