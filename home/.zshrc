@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="blinks"
+#ZSH_THEME="kphoen"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -92,3 +92,13 @@ if [[ -r $HOME/.zshrc.local ]]
 then
   source $HOME/.zshrc.local
 fi
+
+# Customize the prompt
+# Combined left and right prompt configuration.
+local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
+
+PROMPT='
+%~
+${smiley}  %{$reset_color%}'
+
+RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/.gitfiles/git-cwd-info.rb)%{$reset_color%}'

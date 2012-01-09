@@ -112,6 +112,10 @@ highlight Comment ctermfg=cyan ctermbg=darkblue guifg=cyan guibg=#202060
 " Incremental search
 set incsearch
 
+" Ignore case unless search contains different case characters
+set ignorecase
+set smartcase
+
 " Highlight the current line the cursor is on
 set cursorline
 
