@@ -46,7 +46,14 @@ set wrap linebreak
 set nohid
 
 " Save info in history
-set viminfo=%,'1000,f1,<500,n~/.viminfo
+" '1000 = save marks for 1000 files
+" f1 = save global marks
+" <500 = save 500 lines per register
+" % = save the buffer list
+" @1000 = save 1000 lines of input history
+set viminfo=%,@1000,'1000,f1,<500
+" Save 1000 lines of history
+set history=1000
 
 " Color scheme
 set background=dark
@@ -130,14 +137,14 @@ let g:bufExplorerDefaultHelp=0       " Do not show default help.
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
 " Command-t fuzzy finder plugin options in bundle/command-t
-set wildignore+=.git,*.o,*.obj,*.pdf,tmp,log,private,public/javascripts/dojo
+set wildignore+=.git,*.o,*.obj,*.pdf,tmp,log,private,public/javascripts/dojo,out,dist,vendor
 
 " Clear highlighted search items by pressing space
 nmap <SPACE> <SPACE>:noh<CR>
 
 " Turn off the ESC key, this is to train me to use CTRL-C or capslock, which
 " are more efficient
-imap <ESC> <Nop>
+" imap <ESC> <Nop>
 
 " Use tags in gems
 autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(

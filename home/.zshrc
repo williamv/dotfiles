@@ -62,9 +62,10 @@ trash() { mv "$@" ~/.Trash; }
 # Useful ruby rails/ruby aliases
 # Build ruby tags for a rails project ready for vim
 alias gtags='rtags --vi -R .'
-alias fulltest='bundle exec rake db:reset RAILS_ENV=test && bundle exec rake spec'
-alias seed='bundle exec rake db:seed'
-alias git='hub'
+#alias git='hub'
+alias be='bundle exec'
+alias fulltest='be rake db:reset RAILS_ENV=test && bundle exec rake spec'
+alias seed='be rake db:seed'
 
 # Clobber the RVM changes when loading rvm so it uses the system ruby
 mvim()

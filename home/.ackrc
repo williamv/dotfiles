@@ -32,3 +32,5 @@
 --ignore-dir=public/javascripts/dojo
 --ignore-dir=tmp
 --ignore-dir=node_modules
+--ignore-dir=dist
+--ignore-dir=out

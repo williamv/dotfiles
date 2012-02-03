@@ -24,6 +24,8 @@ end
 
 def git_parse_branch
   @git_parse_branch ||= `git symbolic-ref -q HEAD`.match(%{refs/heads/(.*)$})[1]
+rescue
+  ''
 end
 
 def git_head_commit_id
