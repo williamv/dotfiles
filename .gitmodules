@@ -85,15 +85,9 @@
 [submodule "home/.vim/bundle/vim-align"]
 	path = home/.vim/bundle/vim-align
 	url = https://github.com/tsaleh/vim-align.git
-[submodule "home/.vim/bundle/vim-hammer"]
-	path = home/.vim/bundle/vim-hammer
-	url = https://github.com/robgleeson/hammer.vim.git
 [submodule "home/.vim/bundle/vim-stylus"]
 	path = home/.vim/bundle/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
 [submodule "home/.vim/bundle/vim-showmarks"]
 	path = home/.vim/bundle/vim-showmarks
 	url = https://github.com/vim-scripts/ShowMarks.git
-[submodule "home/.vim/bundle/vim-searchcomplete"]
-	path = home/.vim/bundle/vim-searchcomplete
-	url = https://github.com/vim-scripts/SearchComplete.git
