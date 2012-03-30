@@ -90,7 +90,7 @@
 	url = https://github.com/wavded/vim-stylus.git
 [submodule "home/.vim/bundle/vim-showmarks"]
 	path = home/.vim/bundle/vim-showmarks
-	url = https://github.com/vim-scripts/ShowMarks.git
+	url = https://github.com/harleypig/ShowMarks
 [submodule "home/.vim/bundle/vim-molokai"]
 	path = home/.vim/bundle/vim-molokai
 	url = https://github.com/tomasr/molokai.git
