@@ -137,7 +137,7 @@ let g:bufExplorerDefaultHelp=0       " Do not show default help.
 let g:bufExplorerShowRelativePath=1  " Show relative paths.
 
 " Command-t fuzzy finder plugin options in bundle/command-t
-set wildignore+=.git,*.o,*.obj,*.pdf,tmp,log,private,public/javascripts/dojo,out,dist,vendor
+set wildignore+=.git,*.o,*.obj,*.pdf,*.class,*.swp,*.tmp,tmp,log,private,out,dist,vendor
 
 " Clear highlighted search items by pressing space
 nmap <SPACE> <SPACE>:noh<CR>

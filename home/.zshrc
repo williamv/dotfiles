@@ -68,8 +68,7 @@ alias fulltest='be rake db:reset RAILS_ENV=test && bundle exec rake spec'
 alias seed='be rake db:seed'
 
 # Clobber the RVM changes when loading rvm so it uses the system ruby
-mvim()
-{
+mvim() {
     (unset GEM_PATH GEM_HOME; command mvim "$@")
 }
 
@@ -82,17 +81,14 @@ export EDITOR='mvim -f'
 # Ignore duplicate commands when adding to the history and some repeatedly used short commands
 export HISTIGNORE="&:ls:ls *:[bf]g:exit"
 
-# Needed for RVM
+# Load RVM if it installed
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Use my custom input rc
 export INPUTRC=~/.inputrc
 
 # Load local customizations that don't get checked in to homesick
-if [[ -r $HOME/.zshrc.local ]]
-then
-  source $HOME/.zshrc.local
-fi
+[[ -r $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
 
 # Customize the prompt
 # Combined left and right prompt configuration.
@@ -102,4 +98,6 @@ PROMPT='
 %~
 ${smiley}  %{$reset_color%}'
 
-RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/.gitfiles/git-cwd-info.rb)%{$reset_color%}'
+RPROMPT='%{$fg[white]%} '
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && RPROMPT+=$(~/.rvm/bin/rvm-prompt)
+RPROMPT+='$(~/.gitfiles/git-cwd-info)%{$reset_color%}'
