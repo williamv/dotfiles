@@ -1,6 +1,6 @@
 [user]
-	name = John Barker
-	email = jebarker@gmail.com
+  name = John Barker
+  email = jebarker@gmail.com
 [github]
   user = GITHUB_USER
   token = GITHUB_TOKEN
@@ -8,16 +8,17 @@
 	excludesfile = ~/.gitignore
   # Tabs appear as two spaces
   pager = less -FXRS -x2
+  whitespace = space-before-tab tab-in-indent trailing-space
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   st = status
   ds = diff --staged
   co = checkout
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
 [format]
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
 [color "branch"]
@@ -44,3 +45,7 @@
 [diff]
   renames = copies
   mnemonicprefix = true
+[rerere]
+  enabled = true
+[merge]
+  tool = vimdiff
