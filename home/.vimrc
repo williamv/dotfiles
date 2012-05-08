@@ -45,6 +45,10 @@ set list
 set wrap linebreak
 set nohid
 
+" Make sure there are at lease 5 lines above/below the cursor when scrolling
+" vertically
+set so=5
+
 " Save info in history
 " '1000 = save marks for 1000 files
 " f1 = save global marks
