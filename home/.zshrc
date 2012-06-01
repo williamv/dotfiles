@@ -76,8 +76,7 @@ export INPUTRC=~/.inputrc
 # Combined left and right prompt configuration.
 local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 
-PROMPT='
-%~
+PROMPT='%~
 ${smiley}  %{$reset_color%}'
 
 RPROMPT='%{$fg[white]%} '
