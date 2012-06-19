@@ -16,13 +16,14 @@
   co = checkout
   fixup = commit --fixup
   squash = commit --squash
+  show-upstream = rev-parse --symbolic-full-name --abbrev-ref @{u}
 [color]
   branch = auto
   diff = auto
   interactive = auto
   status = auto
 [format]
-  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+  pretty = %Cred%h%Creset %C(bold blue)<%an>%Creset %s %Cgreen[%ar]%Creset
 [color "branch"]
   current = green bold
   local = green
