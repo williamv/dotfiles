@@ -11,12 +11,14 @@
   whitespace = space-before-tab tab-in-indent trailing-space
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  flog = log --pretty=fuller
   st = status
   ds = diff --staged
   co = checkout
   fixup = commit --fixup
   squash = commit --squash
   show-upstream = rev-parse --symbolic-full-name --abbrev-ref @{u}
+  unstage = reset HEAD
 [color]
   branch = auto
   diff = auto

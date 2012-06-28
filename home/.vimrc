@@ -44,6 +44,7 @@ set mat=5
 set list
 set wrap linebreak
 set nohid
+set hidden " Don't abandon changes to a buffer when it becomes hidden
 
 " Make sure there are at lease 5 lines above/below the cursor when scrolling
 " vertically
