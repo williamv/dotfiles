@@ -151,6 +151,9 @@ nmap <SPACE> <SPACE>:noh<CR>
 " are more efficient
 " imap <ESC> <Nop>
 
+" Fancy synmbols for powerline
+let g:Powerline_symbols = 'fancy'
+
 " Use tags in gems
 autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
       \ pathogen#split(&tags) +
