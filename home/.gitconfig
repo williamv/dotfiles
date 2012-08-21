@@ -5,7 +5,7 @@
   user = GITHUB_USER
   token = GITHUB_TOKEN
 [core]
-	excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore
   # When paging to less:
   # * -x2 Tabs appear as two spaces
   # * -S Chop long lines
