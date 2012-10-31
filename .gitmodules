@@ -67,9 +67,6 @@
 [submodule "home/.vim/bundle/vim-colors-railscasts"]
 	path = home/.vim/bundle/vim-colors-railscasts
 	url = https://github.com/jpo/vim-railscasts-theme.git
-[submodule "home/.vim/bundle/vim-scala"]
-	path = home/.vim/bundle/vim-scala
-	url = https://github.com/bdd/vim-scala.git
 [submodule "home/.vim/bundle/vim-ragel"]
 	path = home/.vim/bundle/vim-ragel
 	url = https://github.com/jayferd/ragel.vim.git
