@@ -64,9 +64,6 @@ export EDITOR='mvim -f'
 # Ignore duplicate commands when adding to the history and some repeatedly used short commands
 export HISTIGNORE="&:ls:ls *:[bf]g:exit"
 
-# Needed for RVM
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Use my custom input rc
 export INPUTRC=~/.inputrc
 
