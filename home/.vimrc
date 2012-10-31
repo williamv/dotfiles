@@ -154,6 +154,10 @@ nmap <SPACE> <SPACE>:noh<CR>
 " Fancy synmbols for powerline
 let g:Powerline_symbols = 'fancy'
 
+" Fancy parenthesis support in clojure
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
+
 " Use tags in gems
 autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
       \ pathogen#split(&tags) +
