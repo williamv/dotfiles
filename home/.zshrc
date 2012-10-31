@@ -6,7 +6,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github git-flow brew rails rails3 rvm history-substring-search bundler)
+plugins=(git github git-flow brew rails rails3 rbenv history-substring-search bundler)
 
 source $ZSH/oh-my-zsh.sh
 
