@@ -48,6 +48,7 @@ alias gtags='rtags --vi -R .'
 alias be='bundle exec'
 alias fulltest='be rake db:reset RAILS_ENV=test && bundle exec rake spec'
 alias seed='be rake db:seed'
+wi() { find . -iname \*$1\* }
 
 # Clobber the RVM changes when loading rvm so it uses the system ruby
 mvim() {
