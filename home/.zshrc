@@ -50,11 +50,6 @@ alias fulltest='be rake db:reset RAILS_ENV=test && bundle exec rake spec'
 alias seed='be rake db:seed'
 wi() { find . -iname \*$1\* }
 
-# Clobber the RVM changes when loading rvm so it uses the system ruby
-mvim() {
-    (unset GEM_PATH GEM_HOME; command mvim "$@")
-}
-
 # Make postgres a little quieter
 export PGOPTIONS='-c client_min_messages=WARNING'
 
@@ -74,9 +69,17 @@ export INPUTRC=~/.inputrc
 # Combined left and right prompt configuration.
 local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 
-PROMPT='%~
+# Get the rbenv version if available
+function rbenv_prompt_info() {
+  local ruby_version
+  ruby_version=$(rbenv version 2> /dev/null) || return
+  echo "‹$ruby_version" | sed 's/[ \t].*$/›/'
+}
+
+PROMPT='
+%~
 ${smiley}  %{$reset_color%}'
 
 RPROMPT='%{$fg[white]%} '
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && RPROMPT+=$(~/.rvm/bin/rvm-prompt)
+RPROMPT+=$(rbenv_prompt_info)
 RPROMPT+='$(~/.gitfiles/git-cwd-info)%{$reset_color%}'
