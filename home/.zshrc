@@ -81,5 +81,5 @@ PROMPT='
 ${smiley}  %{$reset_color%}'
 
 RPROMPT='%{$fg[white]%} '
-RPROMPT+=$(rbenv_prompt_info)
+RPROMPT+='$(rbenv_prompt_info)'
 RPROMPT+='$(~/.gitfiles/git-cwd-info)%{$reset_color%}'
