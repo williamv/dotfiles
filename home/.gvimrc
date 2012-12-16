@@ -33,6 +33,8 @@ macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
 
+set guifont=Source\ Code\ Pro:h14
+
 source ~/.vimrc
 
 " Use window transparency, must be done after loading .vimrc
