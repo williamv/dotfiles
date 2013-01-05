@@ -151,6 +151,9 @@ nmap <SPACE> <SPACE>:noh<CR>
 " are more efficient
 " imap <ESC> <Nop>
 
+" Highlight clojurescript like clojure
+au BufNewFile,BufRead *.cljs set filetype=clojure
+
 " Fancy synmbols for powerline
 let g:Powerline_symbols = 'fancy'
 
