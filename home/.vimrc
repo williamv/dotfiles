@@ -157,9 +157,22 @@ au BufNewFile,BufRead *.cljs set filetype=clojure
 " Fancy synmbols for powerline
 let g:Powerline_symbols = 'fancy'
 
-" Fancy parenthesis support in clojure
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
+" Automatically determine indenting using fuzzy matching. e.g. the a line starting "(with-"
+" will be indented two spaces.
+let vimclojure#FuzzyIndent=1
+
+" Highlight built-in functions from clojure.core and friends
+let vimclojure#HighlightBuiltins=1
+
+" Highlight functions from contrib
+let vimclojure#HighlightContrib=1
+
+" As new symbols are identified using VimClojure's dynamic features, automatically
+" highlight them.
+let vimclojure#DynamicHighlighting=1
+
+" Color parens so they're easier to match visually
+let vimclojure#ParenRainbow=1
 
 " Use tags in gems
 autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
