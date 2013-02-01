@@ -1,15 +1,31 @@
-" Necessary on some Linux distros for pathogen to properly load bundles, does
-" on before off to fix exit code issue
-" http://tooky.github.com/2010/04/08/there-was-a-problem-with-the-editor-vi-git-on-mac-os-x.html
-filetype on
+" Don't maintain compatibility, be vIMproved
+set nocompatible
+
+" Required to load vundle
 filetype off
 
-" Enable plugin bundles with pathogen
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+" let Vundle manage Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
-" Don't maintain compatibility
-set nocompatible
+" plugins to use with vundle
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-foreplay'
+Bundle 'sexy-railscasts'
+Bundle 'VimClojure'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-rails.git'
+Bundle 'ctrlp.vim'
+Bundle 'endwise.vim'
+Bundle 'extradite.vim'
+Bundle 'github-theme'
+Bundle 'SuperTab'
+Bundle 'vim-coffee-script'
+Bundle 'epmatsw/ag.vim'
+Bundle 'The-NERD-Commenter'
 
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -62,21 +78,7 @@ set history=1000
 
 " Color scheme
 set background=dark
-colorscheme railscasts
-
-" Status line
-set statusline=[%n]\ %f\ %m\ %y
-
-" Git
-set statusline+=%{fugitive#statusline()}
-
-" RVM
-set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
-
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
+colorscheme sexy-railscasts
 
 " Always show the status line
 set laststatus=2
